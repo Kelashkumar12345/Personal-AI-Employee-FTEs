@@ -1,0 +1,64 @@
+# Environment and secrets
+.env
+*.env
+credentials.json
+token.json
+*_token.json
+*_credentials.json
+*.pem
+*.key
+*.p12
+secrets/
+.secrets/
+
+# WhatsApp session
+whatsapp_session/
+*.session
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-log.txt
+pip-delete-this-directory.txt
+.venv/
+venv/
+env/
+.uv/
+
+# Pytest
+.pytest_cache/
+.coverage
+htmlcov/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Vault (keep template, ignore local vault)
+AI_Employee_Vault/
+vault/
+~/
+
+# Watchdog PID files
+.pids/
+.logs/
+.ralph_iterations
+
+# Playwright
+playwright/.auth/
+test-results/

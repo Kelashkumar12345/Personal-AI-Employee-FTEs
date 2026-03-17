@@ -1,0 +1,36 @@
+{
+  "servers": [
+    {
+      "name": "filesystem",
+      "description": "Read/write vault files. Required for all tiers.",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "${VAULT_PATH}"],
+      "env": {}
+    },
+    {
+      "name": "email",
+      "description": "Send and draft emails via Gmail. Required for Silver+.",
+      "command": "node",
+      "args": ["${EMAIL_MCP_PATH}/index.js"],
+      "env": {
+        "GMAIL_CREDENTIALS": "${GMAIL_CREDENTIALS_PATH}",
+        "GMAIL_TOKEN": "${GMAIL_TOKEN_PATH}"
+      },
+      "_note": "Install: https://github.com/modelcontextprotocol/servers — set EMAIL_MCP_PATH in .env"
+    },
+    {
+      "name": "browser",
+      "description": "Browser automation via Playwright. Used for WhatsApp watcher (Silver+).",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-puppeteer"],
+      "env": {},
+      "_note": "Alternative: use the browsing-with-playwright skill"
+    }
+  ],
+  "_instructions": [
+    "Copy this file to .claude/mcp.json and enable the servers you need.",
+    "Bronze tier only requires 'filesystem'.",
+    "Set all path variables in your .env file.",
+    "Never put credentials directly in this file."
+  ]
+}
